@@ -61,10 +61,22 @@ nav a {
 }
 
 #about-me-section {
-    height: 100vh;
+    height: auto;
     background-color: #fff8e1;
     color: #3e2723;
+    padding-bottom: 50px;
 }
+
+.about-me-paragraph {
+   /* style={{fontSize:"18px", lineHeight: "2", fontFamily: "serif, system-ui", whiteSpace: "pre"}}*/
+   font-size: 18px;
+   line-height: 2;
+   font-family: serif, system-ui;
+   text-wrap: wrap;
+}
+
+
+
 
 #resume-section {
     background-color: #fffdd0; 
@@ -82,19 +94,19 @@ nav a {
 
 
 #blogs-section {
-    height: 100vh; 
+    min-height: 100vh;
     background-color: #d0d0c2; 
     color: #3c3c3c; 
     /*Accent: Sage Green (#9dc183) for emphasis*/
 }
 
-#post-link {
+.post-link {
     color: white; 
     text-decoration: none;
     font-weight: bold;
 }
 
-#post-link:hover {
+.post-link:hover {
     color: blue;
 }
 
@@ -105,4 +117,9 @@ nav a {
     background-color: #e6f7ff; 
     color: #2c3e50;
     /*Accent: Soft Coral (#ff6f61) for buttons or highlights*/
+}
+.responsive-image {
+    width: 100%;          /* Ensures the image fills the width of the container */
+    height: 500px;       /* Fixed height */
+    object-fit: cover;   /* Ensures the image covers the area without stretching */
 }
