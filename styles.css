@@ -56,14 +56,16 @@ nav a {
 
 
 #home-section {
-    height: auto; 
     background-color: #FFF5DC;
     color: #2c3e50;
 }
 
 .personal-image {
-    max-width: 40%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 800px; 
+    max-height: 900px;
 }
 
 #about-me-section {
@@ -78,8 +80,7 @@ nav a {
    font-size: 18px;
    line-height: 1.5;
    font-family: serif, system-ui;
-   text-wrap: wrap;
-   
+   text-wrap: wrap;   
 }
 
 
@@ -107,6 +108,16 @@ nav a {
     /*Accent: Sage Green (#9dc183) for emphasis*/
 }
 
+.responsive-image {
+    width: 100%; /* Make the image take the full width of the parent */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 600px; /* Limit the maximum width */
+    max-height: 400px; /* Limit the maximum height */
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+
+
 .post-link {
     color: white; 
     text-decoration: none;
@@ -124,9 +135,4 @@ nav a {
     background-color: #e6f7ff; 
     color: #2c3e50;
     /*Accent: Soft Coral (#ff6f61) for buttons or highlights*/
-}
-.responsive-image {
-    width: 100%;          /* Ensures the image fills the width of the container */
-    height: 500px;       /* Fixed height */
-    object-fit: cover;   /* Ensures the image covers the area without stretching */
 }
