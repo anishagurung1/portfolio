@@ -56,12 +56,18 @@ nav a {
 
 
 #home-section {
-    height: 100vh; 
+    height: auto; 
     background-color: #FFF5DC;
+    color: #2c3e50;
+}
+
+.personal-image {
+    max-width: 40%; 
+    height: auto; 
 }
 
 #about-me-section {
-    height: auto;
+    min-height: 100vh;
     background-color: #fff8e1;
     color: #3e2723;
     padding-bottom: 50px;
@@ -70,9 +76,10 @@ nav a {
 .about-me-paragraph {
    /* style={{fontSize:"18px", lineHeight: "2", fontFamily: "serif, system-ui", whiteSpace: "pre"}}*/
    font-size: 18px;
-   line-height: 2;
+   line-height: 1.5;
    font-family: serif, system-ui;
    text-wrap: wrap;
+   
 }
 
 
