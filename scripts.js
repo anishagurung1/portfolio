@@ -11,9 +11,8 @@ const Home = () => {
             </div>
 
             <div className="container d-flex justify-content-center">
-                <ul id="home-info" className="d-flex flex-wrap gap-5"
+                <ul id="home-info" className="d-flex flex-wrap gap-4"
                 style={{
-                    position: "relative", 
                     listStyleType: "square", 
                 }}>
                     <li>Student</li>
@@ -24,7 +23,7 @@ const Home = () => {
             </div>
         </div>
 
-        <img className=" container-fluid personal-image" src="./images/personal.jpg" width="600" height="400"/>
+        <img className="personal-image" src="./images/personal.jpg" width="800" height="900"/>
 
     </section>
 
@@ -65,20 +64,20 @@ const AboutMe = () => {
                 About me
             </p>
         </div>
-        <div className="container d-flex flex-column  align-items-center">
+        <div className="container d-flex flex-column  align-items-center p-5">
             <div>
-                <pre className="about-me-paragraph" >
+                <p className="about-me-paragraph" >
                     {paragraph1}
-                </pre>
-                <pre className="about-me-paragraph">
+                </p>
+                <p className="about-me-paragraph">
                     {paragraph2}
-                </pre>
-                <pre className="about-me-paragraph">
+                </p>
+                <p className="about-me-paragraph">
                     {paragraph3}
-                </pre>
-                <pre className="about-me-paragraph">
+                </p>
+                <p className="about-me-paragraph">
                     {paragraph4}
-                </pre>
+                </p>
 
             </div>
         </div>
@@ -165,27 +164,30 @@ const Blogs = () => {
             link:"https://www.nationalmillennialcommunity.com/single-post/cleveland-a-city-that-embraces-you"}
     }
     return (
-        <section className="container-fluid" id="blogs-section" style={{ paddingTop: "60px" }}>
+        <section className="container-fluid" id="blogs-section" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
         <div className="container text-center">
             <p id="blogs-header" className="display-3 display-md-2 display-lg-3">
                 Blogs
             </p>
         </div>
     
-        <div className="container d-flex gap-3 justify-content-center" id="blogsPost">
+        <div className= " container d-flex gap-3 flex-row flex-wrap justify-content-center" id="blogsPost">
             {Object.keys(blogs).map(key => {
                 return (
-                    <div className="post text-center" key={key}>
+                    <div className="text-center" key={key}>
                         <img 
                             src={blogs[key]?.image} 
-                            className="responsive-image"  // Apply the responsive class
+                            className=" responsive-image"  // Apply the responsive class
                             alt={blogs[key]?.title} 
+                            width="600"
+                            height="400"
                         />
-                        <p style={{ width: "100%", padding: "10px 0 20px 0", backgroundColor: "green" }}>
-                            <a className="post-link" id={key} href={blogs[key]?.link}>
+                        <div style={{width: "100%", backgroundColor:"green", padding:"10px"}}>
+                            <a className="post-link" id={key} href={blogs[key]?.link}
+                            >
                                 {blogs[key]?.title}
                             </a>
-                        </p>
+                        </div>
                     </div>
                 );
             })}
