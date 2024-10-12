@@ -1,26 +1,30 @@
 //Home section 
 const Home = () => {
     return (
-    <section id="home-section" className="container-fluid full-height d-flex justify-content-center flex-column align-items-center">
+    <section id="home-section" className="container-fluid full-height d-flex justify-content-end p-0">
+        <div className=" container-fluid d-flex flex-column justify-content-center align-items-center">
 
-        <div className="container text-center">
-            <p id="name" className="display-1 display-md-2 display-lg-3 fw-bold">
-                Anisha Gurung
-            </p>
+            <div className="container text-center">
+                <p id="name" className="display-1 display-md-2 display-lg-3 fw-bold">
+                    Anisha Gurung
+                </p>
+            </div>
+
+            <div className="container d-flex justify-content-center">
+                <ul id="home-info" className="d-flex flex-wrap gap-5"
+                style={{
+                    position: "relative", 
+                    listStyleType: "square", 
+                }}>
+                    <li>Student</li>
+                    <li>Marketing</li>
+                    <li>4th year</li>
+                    <li>The University of Akron</li>
+                </ul>
+            </div>
         </div>
 
-        <div className="container d-flex justify-content-center">
-            <ul id="home-info" className="d-flex flex-wrap gap-5"
-            style={{
-                position: "relative", 
-                listStyleType: "square", 
-            }}>
-                <li>Student</li>
-                <li>Marketing</li>
-                <li>4th year</li>
-                <li>The University of Akron</li>
-            </ul>
-        </div>
+        <img className=" container-fluid personal-image" src="./images/personal.jpg" width="600" height="400"/>
 
     </section>
 
@@ -54,26 +58,29 @@ const AboutMe = () => {
 
 
     return (
-    <section id="about-me-section" style={{paddingTop:"60px"}}>
+    <section className="container-fluid" id="about-me-section" style={{paddingTop:"60px"}}>
 
         <div className="container text-center">
             <p id="about-me-header" className="display-3 display-md-2 display-lg-3">
                 About me
             </p>
         </div>
-        <div className="container " style={{ width:"45%" ,border: "2px solid grey"}}>
-            <pre className="about-me-paragraph" >
-                {paragraph1}
-            </pre>
-            <pre className="about-me-paragraph">
-                {paragraph2}
-            </pre>
-            <pre className="about-me-paragraph">
-                {paragraph3}
-            </pre>
-            <pre className="about-me-paragraph">
-                {paragraph4}
-            </pre>
+        <div className="container d-flex flex-column  align-items-center">
+            <div>
+                <pre className="about-me-paragraph" >
+                    {paragraph1}
+                </pre>
+                <pre className="about-me-paragraph">
+                    {paragraph2}
+                </pre>
+                <pre className="about-me-paragraph">
+                    {paragraph3}
+                </pre>
+                <pre className="about-me-paragraph">
+                    {paragraph4}
+                </pre>
+
+            </div>
         </div>
 
     </section>
@@ -134,7 +141,7 @@ const Resume = () => {
     .catch(err => console.error('Error loading DOCX:', err));
 
     return (
-        <section id="resume-section" className="height-full pb-5" style={{paddingTop:"60px"}}>
+        <section id="resume-section" className=" container-fluid height-full pb-5" style={{paddingTop:"60px"}}>
             <div className="container text-center">
                 <p id="resume-header" className="display-3 display-md-2 display-lg-3">
                     Resume
@@ -192,36 +199,84 @@ const Blogs = () => {
 
 //Contact me section
 const ContactMe = () => {
+    const [result, setResult] = React.useState("");
+    const key = '96fd9c37-3b2b-453a-be42-01f17e98e4d4'; 
+
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
+  
+      formData.append("access_key",key);
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    };
+  
     return (
-        <section  className="container-fluid" id="contact-me-section" style={{paddingTop:"60px"}}>
-            <div className="container text-center">
+      <section  id="contact-me-section" className="container-fluid"  style={{ paddingTop: "60px" }}>
+         <div className="container text-center">
                 <p id="contact-me-header" className="display-3 display-md-2 display-lg-3">
                     Contact me
                 </p>
-            </div>
-        <div className="container mt-5">
-        <form>
-            <div className="form-group mb-3">
-                <label htmlFor="name">Name</label>
-                <input type="text" className="form-control" id="name" placeholder="Enter your name" required/>
-            </div>
-            <div className="form-group mb-3">
-                <label htmlFor="email">Email</label>
-                <input type="email" className="form-control" id="email" placeholder="Enter your email" required/>
-            </div>
-            <div className="form-group mb-4">
-                <label htmlFor="message">Message</label>
-                <textarea className="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
-            </div>
-
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
         </div>
 
-        
-        </section>
+        <div className="container-fluid d-flex flex-column justify-content-center align-items-center">
+            <form onSubmit={onSubmit}>
+                <div className="form-group mb-3 ">
+                    <label htmlFor="name" style={{fontWeight:"bold"}}>Name</label>
+                    <input type="text" className="form-control" id="name" placeholder="Enter your name"  name="name" required/>
+                </div>
 
-    )
+                <div className="form-group mb-3">
+                    <label htmlFor="email" style={{fontWeight:"bold"}}>Email</label>
+                    <input type="email" className="form-control" id="email" placeholder="Enter your email" name="email" required/>
+                </div>
+
+                <div className="form-group mb-4">
+                    <label htmlFor="message" style={{fontWeight:"bold"}}>Message</label>
+                    <textarea name="message" className="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
+                </div>
+                <div className="text-center">
+                    <button type="submit" className="btn btn-primary ">Submit Form</button>
+                </div>
+
+            </form>
+            <span>{result}</span>
+
+            <div style={{fontSize:"40px"}} className="text-center mt-5">
+                <h5>Socials</h5>
+                <div>
+                    <a href="https://www.linkedin.com/in/anisha-gurung-5b2a34220"  style={{marginRight: "10px"}}>
+                    <i className="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" style={{marginRight: "10px"}}>
+                    <i className="fa-brands fa-square-instagram"></i>
+                    </a>
+                    <a href="https://x.com/?lang=en" style={{marginRight: "10px"}}>
+                    <i className="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+             
+            </div>
+
+        </div>
+        
+  
+      </section>
+    );
 }
 
 
