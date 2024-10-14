@@ -4,24 +4,30 @@
     box-sizing: border-box;
 }
 
-.nav-bar {
-    display: flex; 
-    flex-direction: row; 
-    gap: 20px; 
-    justify-content: end;
-    align-items: center;
-    flex-wrap: wrap;
-    height: auto;
+.navbar {
     background-color:#2c3e50;
-    color: #ffd54f;
     border-bottom: 5px solid #ffd54f;
-    width: 100%;
+}
+
+.nav-link {
+    color: #ffd54f;
+}
+
+.navbar-toggler {
+    background-color: #ffd54f;
+}
+
+.nav-link:hover {
+    background-color: #80ced6;
+    color: white;
 }
 
 .nav-bar a {
+    border: 2px solid red; 
+    padding: 10px; 
     font-weight: bold;
-    text-decoration: none; 
-    padding: 15px; 
+    text-decoration: none;
+    height: 100%; 
 }
 
 
@@ -60,13 +66,34 @@ nav a {
     color: #2c3e50;
 }
 
+@media only screen and (max-width: 950px)
+{
+    .custom-home{
+        display: flex; 
+        flex-direction: column;
+    }
+
+    .custom-list-wrapper {
+        font-size: 3.0vw; 
+    }
+
+    #home-info li {
+        margin-right: 0.1vw;
+        max-width: 100%; 
+    }
+
+}
+
+
 .personal-image {
     width: 100%;
     height: auto;
     object-fit: cover;
     max-width: 800px; 
-    max-height: 900px;
+    max-height: 100vh;
 }
+
+
 
 #about-me-section {
     min-height: 100vh;
@@ -79,7 +106,7 @@ nav a {
    /* style={{fontSize:"18px", lineHeight: "2", fontFamily: "serif, system-ui", whiteSpace: "pre"}}*/
    font-size: 18px;
    line-height: 1.5;
-   font-family: serif, system-ui;
+   font-family: Arial, Helvetica, sans-serif;
    text-wrap: wrap;   
 }
 

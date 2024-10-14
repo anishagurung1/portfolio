@@ -1,17 +1,17 @@
 //Home section 
 const Home = () => {
     return (
-    <section id="home-section" className="container-fluid full-height d-flex justify-content-end p-0">
-        <div className=" container-fluid d-flex flex-column justify-content-center align-items-center">
+    <section id="home-section" className="container-fluid full-height d-flex justify-content-end p-0 custom-home">
+        <div className="container d-flex flex-column justify-content-center align-items-center">
 
-            <div className="container text-center">
+            <div className=" text-center">
                 <p id="name" className="display-1 display-md-2 display-lg-3 fw-bold">
                     Anisha Gurung
                 </p>
             </div>
 
-            <div className="container d-flex justify-content-center">
-                <ul id="home-info" className="d-flex flex-wrap gap-4"
+            <div className="d-flex justify-content-center custom-list-wrapper">
+                <ul id="home-info" className=  "d-flex flex-wrap gap-4 cutsom-list position-relative"
                 style={{
                     listStyleType: "square", 
                 }}>
@@ -32,7 +32,7 @@ const Home = () => {
 //About me section 
 const AboutMe = () => {
     const paragraph1 = `
-        Hello! My name is Anisha Gurung, and I am currently a senior at the University of Akron, 
+        Hi! My name is Anisha Gurung, and I am currently a senior at the University of Akron, 
     majoring in Marketing. I was born and raised in India and spent two years living in Nepal 
     before moving to the United States at the end of 2017 as a Bhutanese Nepali refugee. This 
     journey has profoundly shaped my aspirations; from a young age, I have dreamed of becoming 
