@@ -11,16 +11,24 @@ const Home = () => {
             </div>
 
             <div className="d-flex justify-content-center custom-list-wrapper">
-                <ul id="home-info" className=  "d-flex flex-wrap gap-4 cutsom-list position-relative"
-                style={{
-                    listStyleType: "square", 
-                }}>
-                    <li>Student</li>
-                    <li>Marketing</li>
-                    <li>4th year</li>
-                    <li>The University of Akron</li>
-                </ul>
-            </div>
+        <ul
+            id="home-info"
+            className="d-flex gap-4 custom-list position-relative"
+            style={{
+                listStyleType: "square",
+                padding: 0,
+                margin: 0,
+                display: "flex",
+                flexDirection: "row",
+                whiteSpace: "nowrap"
+            }}
+        >
+            <li style={{ flex: "0 0 auto" }}>Student</li>
+            <li style={{ flex: "0 0 auto" }}>Marketing</li>
+            <li style={{ flex: "0 0 auto" }}>4th year</li>
+            <li style={{ flex: "0 0 auto" }}>The University of Akron</li>
+        </ul>
+    </div>
         </div>
 
         <img className="personal-image" src="./images/personal.jpg" width="800" height="900"/>

@@ -74,14 +74,10 @@ nav a {
     }
 
     .custom-list-wrapper {
-        font-size: 3.0vw; 
+        font-size: 3.0vw;
+        max-width: 100vh;
+        margin-bottom: 10px;
     }
-
-    #home-info li {
-        margin-right: 0.1vw;
-        max-width: 100%; 
-    }
-
 }
 
 
