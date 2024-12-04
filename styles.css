@@ -11,6 +11,7 @@
 
 .nav-link {
     color: #ffd54f;
+    border-bottom: 5px solid transparent;
 }
 
 .navbar-toggler {
@@ -18,8 +19,8 @@
 }
 
 .nav-link:hover {
-    background-color: #80ced6;
-    color: white;
+    border-bottom: 5px solid rgb(55, 255, 0);
+    color:   #8fd2ff;
 }
 
 .nav-bar a {
@@ -33,10 +34,6 @@
     height: 100%;
 }
 
-.nav-bar a:hover {
-    background-color: #80ced6;
-    color: white;
-}
 
 /*
 
