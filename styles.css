@@ -23,13 +23,15 @@
 }
 
 .nav-bar a {
-    border: 2px solid red; 
     padding: 10px; 
     font-weight: bold;
     text-decoration: none;
-    height: 100%; 
+    height: 100%;
 }
 
+.nav-item {
+    height: 100%;
+}
 
 .nav-bar a:hover {
     background-color: #80ced6;
@@ -58,6 +60,12 @@ nav a {
 }
 */
 
+.icon-wrapper {
+    height: 56px;
+    width: 56px;
+    display: block;
+ 
+}
 
 
 
