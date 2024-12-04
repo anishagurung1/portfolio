@@ -272,12 +272,6 @@ const ContactMe = () => {
                     <a href="https://www.linkedin.com/in/anisha-gurung-5b2a34220"  style={{marginRight: "10px"}}>
                     <i className="fa-brands fa-linkedin"></i>
                     </a>
-                    <a href="https://www.instagram.com/" style={{marginRight: "10px"}}>
-                    <i className="fa-brands fa-square-instagram"></i>
-                    </a>
-                    <a href="https://x.com/?lang=en" style={{marginRight: "10px"}}>
-                    <i className="fa-brands fa-x-twitter"></i>
-                    </a>
                 </div>
              
             </div>
