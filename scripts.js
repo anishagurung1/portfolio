@@ -5,9 +5,9 @@ const Home = () => {
         <div className="container d-flex flex-column justify-content-center align-items-center">
 
             <div className=" text-center">
-                <p id="name" className="display-1 display-md-2 display-lg-3 fw-bold">
+                <h1 id="name" className="display-1 display-md-2 display-lg-3 fw-bold">
                     Anisha Gurung
-                </p>
+                </h1>
             </div>
 
             <div className="d-flex justify-content-center custom-list-wrapper">
