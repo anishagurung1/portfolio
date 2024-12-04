@@ -1,0 +1,7 @@
+# Allow all bots to access the entire site, except for the /private/ directory
+User-agent: *
+Disallow: /private/
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.anishagurung.com/sitemap.xml
