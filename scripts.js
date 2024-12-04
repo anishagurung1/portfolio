@@ -269,7 +269,7 @@ const ContactMe = () => {
             <div style={{fontSize:"40px"}} className="text-center mt-5">
                 <h5>Socials</h5>
                 <div>
-                    <a href="https://www.linkedin.com/in/anisha-gurung-5b2a34220"  style={{marginRight: "10px"}}>
+                    <a href="https://www.linkedin.com/in/anisha-gurung-5b2a34220">
                     <i className="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
