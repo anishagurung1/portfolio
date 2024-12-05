@@ -1,7 +1,38 @@
+
+
+const GoogleTagManager = () => {
+    React.useEffect(() => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KHM4HP6B';
+  
+      // Create a dataLayer if it doesn't exist
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js',
+      });
+  
+      // Insert the script tag before the first script tag in the document
+      const firstScript = document.getElementsByTagName('script')[0];
+      firstScript.parentNode.insertBefore(script, firstScript);
+      
+      // Clean up by removing the script when the component is unmounted
+      return () => {
+        script.remove();
+      };
+    }, []);
+  
+    return null; // No UI to render
+  };
+  
+
+
 //Home section 
 const Home = () => {
     return (
     <section id="home-section" className="container-fluid full-height d-flex justify-content-end p-0 custom-home">
+        <GoogleTagManager/>
         <div className="container d-flex flex-column justify-content-center align-items-center">
 
             <div className=" text-center">
@@ -66,7 +97,7 @@ const AboutMe = () => {
 
     return (
     <section className="container-fluid" id="about-me-section" style={{paddingTop:"60px"}}>
-
+        <GoogleTagManager/>
         <div className="container text-center">
             <p id="about-me-header" className="display-3 display-md-2 display-lg-3">
                 About me
@@ -149,6 +180,7 @@ const Resume = () => {
 
     return (
         <section id="resume-section" className=" container-fluid height-full pb-5" style={{paddingTop:"60px"}}>
+            <GoogleTagManager/>
             <div className="container text-center">
                 <p id="resume-header" className="display-3 display-md-2 display-lg-3">
                     Resume
@@ -173,6 +205,7 @@ const Blogs = () => {
     }
     return (
         <section className="container-fluid" id="blogs-section" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
+        <GoogleTagManager/> 
         <div className="container text-center">
             <p id="blogs-header" className="display-3 display-md-2 display-lg-3">
                 Blogs
@@ -237,7 +270,8 @@ const ContactMe = () => {
   
     return (
       <section  id="contact-me-section" className="container-fluid"  style={{ paddingTop: "60px" }}>
-         <div className="container text-center">
+        <GoogleTagManager/>
+        <div className="container text-center">
                 <p id="contact-me-header" className="display-3 display-md-2 display-lg-3">
                     Contact me
                 </p>
